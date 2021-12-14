@@ -9,13 +9,19 @@ class MutasiController extends Controller
 {
     public function index()
     {
-    	$mutasi = DB::table('mutasi')->get();
+    	//$mutasi = DB::table('mutasi')->get();
+        $mutasi = DB::table('mutasi')
+        ->join('pegawai', 'mutasi.ID', '=', 'pegawai.pegawai_id')
+        ->select('mutasi.*', 'pegawai.pegawai_nama')
+        ->paginate(6);
 
     	return view('mutasi.index',['mutasi' => $mutasi]);
     }
     public function tambah()
     {
-        return view('mutasi.tambah');
+        //mengambil data dari tabel pegawai
+        $pegawai = DB::table('pegawai')->orderBy('pegawai_nama', 'asc')->get();
+        return view('mutasi.tambah',['pegawai' => $pegawai]);
     }
     public function store(Request $request)
     {
@@ -49,4 +55,19 @@ class MutasiController extends Controller
 
         return redirect('/mutasi');
     }
+
+    public function cari(Request $request)
+	{
+		// menangkap data pencarian
+		$cari = $request->cari;
+
+    		// mengambil data dari table pegawai sesuai pencarian data
+		$mutasi = DB::table('mutasi')
+		->where('mutasi_IDPegawai','like',"%".$cari."%")
+		->paginate();
+
+    		// mengirim data pegawai ke view index
+		return view('mutasi.index',['mutasi' => $mutasi]);
+
+	}
 }

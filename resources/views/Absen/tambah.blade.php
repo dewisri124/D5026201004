@@ -1,13 +1,13 @@
 @extends('layout.ceria')
 
-@section('title', 'Dashboard')
+@section('title', 'Data Absen')
 
 @section('content')
 
 <div class="container">
     <h3 class="text-center">Tambah Data Pegawai</h3>
     <br/>
-	<a href="/absen" class=""> Kembali</a>
+	<a href="/absen" class="btn btn-secondary"> Kembali</a>
 	<br/>
 	<form action="/absen/store" method="post" class="rounded">
 		{{ csrf_field() }}
@@ -26,7 +26,7 @@
             <label for="datetimepicker" class="control-label"></label>
                 <div class="col-4"> Tanggal :</div>
                 <div class="col-sm-8 input-group date" id="datetimepicker">
-                    <input type='text' required="required" class="form-control" name="Tanggal" />
+                    <input type='text' class="form-control" name="tanggal" />
                         <div class="input-group-addon input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-calendar"></i></span>
                         </div>
@@ -43,7 +43,7 @@
         </div>
         </div>
 		<div class="d-grid gap-2 col-12 mx-auto mt-3">
-            <center> <input type="submit" value="Simpan Data"> </center>
+            <center> <input type="submit" value="simpan data"> </center>
         </div>
 	</form>
 </div>

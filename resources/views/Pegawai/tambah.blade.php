@@ -1,13 +1,13 @@
 @extends('layout.ceria')
 
-@section('title', 'Dashboard')
+@section('title', 'Data Pegawai')
 
 @section('content')
 
 <div class="container">
-	<h3>Data Pegawai</h3>
+	<h3 class="text-center">Data Pegawai</h3>
 
-	<a href="/pegawai"> Kembali</a>
+	<a href="/pegawai" class="btn btn-secondary"> Kembali</a>
 
 	<br/>
 	<br/>
