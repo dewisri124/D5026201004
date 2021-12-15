@@ -83,3 +83,19 @@ Route::post('/kursi/update','kursiController@update');
 Route::get('/kursi/hapus/{id}','kursiController@hapus');
 Route::get('/kursi/cari','kursiController@cari');
 Route::get('/kursi/detail/{id}','kursiController@view');
+
+
+Route::get('home', function () {
+    return view('karyawan1.index');
+});
+
+//karyawan1
+Route::get('/karyawan1', 'karyawan1Controller@index');
+Route::get('/karyawan1/tambah','karyawan1Controller@tambah');
+Route::post('/karyawan1/store','karyawan1Controller@store');
+Route::get('/karyawan1/edit/{id}','karyawan1Controller@edit');
+Route::post('/karyawan1/update','karyawan1Controller@update');
+Route::get('/karyawan1/hapus/{id}','karyawan1Controller@hapus');
+Route::get('/karyawan1/cari','karyawan1Controller@cari');
+Route::get('/karyawan1/detail/{id}','karyawan1Controller@view');
+
