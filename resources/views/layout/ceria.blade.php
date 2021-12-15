@@ -81,6 +81,9 @@
                         <li>
                             <a href="/kursi"> <i class="menu-icon fa fa-dashboard"></i>kursi</a>
                         </li>
+                        <li>
+                            <a href="/karyawan1"> <i class="menu-icon fa fa-dashboard"></i>karyawan1</a>
+                        </li>
                     </ul>
 
                 </div>
